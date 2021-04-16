@@ -2,6 +2,7 @@ import datetime
 from sqlalchemy import Table, Column, Integer, String, ForeignKey, Date, Text
 from sqlalchemy.orm import relationship
 from flask_appbuilder import Model
+from flask_appbuilder.models.mixins import ImageColumn
 
 class Gender(Model):
     id = Column(Integer, primary_key=True)
@@ -106,3 +107,22 @@ class NewsCategory(Model):
     __tablename__ = 'news_category'
     id = Column(Integer, primary_key=True)
     name = Column(String(50), nullable=False)
+    
+class Cinema(Model):
+    __tablename__ = 'cinema'
+    id = Column(Integer, primary_key=True)
+    cinemaname = Column(String(50), nullable=False)
+    area = Column(String(120), nullable=False)
+    #Mid = Column(Integer, ForeignKey('movie.id'), nullable=False)
+    
+class Movie(Model):
+   __tablename__ = "movie"
+   id = Column(Integer, primary_key=True)
+   moviename = Column(String(50), nullable=False)
+   #photo = Column(Photo(root="/MCLnew/MCL/app/static/img"))
+   #photo = Column(ImageColumn(size=(300, 300, True), thumbnail_size=(30, 30, True)))
+   
+class Movietype(Model):
+    __tablename__ = "movietype"
+    id = Column(Integer, primary_key=True)
+    typename = Column(String(50), nullable=False)

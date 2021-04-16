@@ -1,7 +1,7 @@
 from flask_appbuilder import ModelView
 from flask_appbuilder.fieldwidgets import Select2Widget
 from flask_appbuilder.models.sqla.interface import SQLAInterface
-from .models import Employee,Department, Function, EmployeeHistory, Benefit, MenuItem, MenuCategory, News, NewsCategory
+from .models import Employee,Department, Function, EmployeeHistory, Benefit, MenuItem, MenuCategory, News, NewsCategory, Cinema, Movie, Movietype
 from wtforms.ext.sqlalchemy.fields import QuerySelectField
 from app import appbuilder, db
 from flask_appbuilder.baseviews import expose, BaseView
@@ -78,6 +78,17 @@ class NewsPageView(BaseView):
         self.update_redirect()
         return self.render_template('news.html', param1=param1)
 
+class CinemaView(ModelView):
+    datamodel = SQLAInterface(Cinema)
+    list_columns = ['id', 'cinemaname','area']
+    
+class MovieView(ModelView):
+    datamodel = SQLAInterface(Movie)
+    list_columns = ['id', 'moviename']
+    
+class MovietypeView(ModelView):
+    datamodel = SQLAInterface(Movietype)
+    list_columns = ['id', 'typename']
 
 db.create_all()
 
@@ -90,4 +101,6 @@ appbuilder.add_view(MenuItemView, "MenuItem", icon="fa-folder-open-o", category=
 appbuilder.add_view(MenuCategoryView, "MenuCategory", icon="fa-folder-open-o", category="Admin")
 appbuilder.add_view(NewsView, "News", icon="fa-folder-open-o", category="Admin")
 appbuilder.add_view(NewsCategoryView, "NewsCategory", icon="fa-folder-open-o", category="Admin")
-
+appbuilder.add_view(CinemaView, "Cinema", icon="fa-folder-open-o", category="Admin")
+appbuilder.add_view(MovieView, "Movie", icon="fa-folder-open-o", category="Admin")
+appbuilder.add_view(MovietypeView, "Movietype", icon="fa-folder-open-o", category="Admin")
