@@ -65,6 +65,10 @@ msgstr "集团通过饼图示例"
 msgid "Contact us with any questions you would like related with this project."
 msgstr ""
 
+#: app/templates/index.html:16
+msgid "TICKETING"
+msgstr "現正發售"
+
 #: app/templates/index.html:24
 msgid ""
 "Simple and rapid application development framework, built on top of "
@@ -122,7 +126,7 @@ msgstr "注册"
 
 #: app/templates/index.html:84
 msgid "Super fast development "
-msgstr "超快速发展 "
+msgstr "現正發售"
 
 #: app/templates/index.html:84
 msgid " Highly customizable"

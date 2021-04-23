@@ -1,7 +1,7 @@
 from flask_appbuilder import ModelView
 from flask_appbuilder.fieldwidgets import Select2Widget
 from flask_appbuilder.models.sqla.interface import SQLAInterface
-from .models import Employee,Department, Function, EmployeeHistory, Benefit, MenuItem, MenuCategory, News, NewsCategory, Cinema, Movie, Movietype, Language, Loginuser, Menu1, Menu2, Menu3, Menu4, Socialmedia, Menu5, Menu6
+from .models import Employee,Department, Function, EmployeeHistory, Benefit, MenuItem, MenuCategory, News, NewsCategory, Cinema, Movie, Movietype, Language, Loginuser, Menu1, Menu2, Menu3, Menu4, Socialmedia, Menu5, Menu6, Cinemamovie
 from wtforms.ext.sqlalchemy.fields import QuerySelectField
 from app import appbuilder, db
 from flask_appbuilder.baseviews import expose, BaseView
@@ -127,6 +127,10 @@ class Menu6View(ModelView):
     datamodel = SQLAInterface(Menu6)
     list_columns = ['id', 'title']
     
+class CinemamovieView(ModelView):
+    datamodel = SQLAInterface(Cinemamovie)
+    list_columns = ['id', 'cinema', 'moviename1']
+    
 db.create_all()
 
 """ Page View """
@@ -149,4 +153,5 @@ appbuilder.add_view(Menu3View, "Menu3", icon="fa-folder-open-o", category="Admin
 appbuilder.add_view(Menu4View, "Menu4", icon="fa-folder-open-o", category="Admin")
 appbuilder.add_view(SocialmediaView, "Socialmedia", icon="fa-folder-open-o", category="Admin")
 appbuilder.add_view(Menu5View, "Menu5", icon="fa-folder-open-o", category="Admin")
-appbuilder.add_view(Menu6View, "Menu6", icon="fa-folder-open-o", category="Admin")	
+appbuilder.add_view(Menu6View, "Menu6", icon="fa-folder-open-o", category="Admin")
+appbuilder.add_view(CinemamovieView, "Cinemamovie", icon="fa-folder-open-o", category="Admin")

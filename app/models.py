@@ -121,8 +121,8 @@ class Cinema(Model):
 class Movie(Model):
     __tablename__ = "movie"
     id = Column(Integer, primary_key=True)
-    moviename = Column(String(50), nullable=False)
-    movietype_id = Column(Integer, ForeignKey('movietype.id'), nullable=False)   
+    moviename = Column(String(50), nullable=True)
+    movietype_id = Column(Integer, ForeignKey('movietype.id'), nullable=True)   
     movie_type = relationship("Movietype")
     photo = Column(ImageColumn(size=(300, 300, True), thumbnail_size=(30, 30, True)))
     
@@ -140,11 +140,11 @@ class Movie(Model):
     def photo_img_thumbnail(self):
         im = ImageManager()
         if self.photo:
-            return Markup('<a href="' + url_for('PersonModelView.show',pk=str(self.id)) +\
+            return Markup('<a href="' + url_for('MovieView.show',pk=str(self.id)) +\
              '" class="thumbnail"><img src="' + im.get_url_thumbnail(self.photo) +\
               '" alt="Photo" class="img-rounded img-responsive"></a>')
         else:
-            return Markup('<a href="' + url_for('PersonModelView.show',pk=str(self.id)) +\
+            return Markup('<a href="' + url_for('MovieView.show',pk=str(self.id)) +\
              '" class="thumbnail"><img src="//:0" alt="Photo" class="img-responsive"></a>')
     
              
@@ -198,3 +198,9 @@ class Menu6(Model):
     __tablename__ = 'menu4'
     id = Column(Integer, primary_key=True)
     title = Column(String(10), nullable=False)
+    
+class Cinemamovie(Model): 
+    __tablename__ = "cinemamovie"
+    id = Column(Integer, primary_key=True)
+    cinemaname1 = Column(String(100), nullable=False)
+    moviename = Column(String(100), nullable=False)
