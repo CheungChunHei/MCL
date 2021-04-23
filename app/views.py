@@ -1,7 +1,7 @@
 from flask_appbuilder import ModelView
 from flask_appbuilder.fieldwidgets import Select2Widget
 from flask_appbuilder.models.sqla.interface import SQLAInterface
-from .models import Employee,Department, Function, EmployeeHistory, Benefit, MenuItem, MenuCategory, News, NewsCategory
+from .models import Employee,Department, Function, EmployeeHistory, Benefit, MenuItem, MenuCategory, News, NewsCategory, Cinema, Movie, Movietype, Language, Loginuser, Menu1, Menu2, Menu3, Menu4, Socialmedia, Menu5, Menu6
 from wtforms.ext.sqlalchemy.fields import QuerySelectField
 from app import appbuilder, db
 from flask_appbuilder.baseviews import expose, BaseView
@@ -78,7 +78,55 @@ class NewsPageView(BaseView):
         self.update_redirect()
         return self.render_template('news.html', param1=param1)
 
+class CinemaView(ModelView):
+    datamodel = SQLAInterface(Cinema)
+    list_columns = ['id', 'cinemaname','area', 'movie_id']
+    
+class MovieView(ModelView):
+    datamodel = SQLAInterface(Movie)
+    list_columns = ['id', 'moviename','movietype_id', 'photo', 'photo_img', 'photo_img_thumbnail']
+    show_columns = ['photo_img','name']
+    
+class MovietypeView(ModelView):
+    datamodel = SQLAInterface(Movietype)
+    list_columns = ['id', 'typename']
+    
+class LanguageView(ModelView):
+    datamodel = SQLAInterface(Language)
+    list_columns = ['id', 'languagename']
+    
+class LoginuserView(ModelView):
+    datamodel = SQLAInterface(Loginuser)
+    list_columns = ['id', 'name', 'email', 'phone']
+    
+class Menu1View(ModelView):
+    datamodel = SQLAInterface(Menu1)
+    list_columns = ['id', 'title']
+    
+class Menu2View(ModelView):
+    datamodel = SQLAInterface(Menu2)
+    list_columns = ['id', 'title']
+    
+class Menu3View(ModelView):
+    datamodel = SQLAInterface(Menu3)
+    list_columns = ['id', 'title']
 
+class Menu4View(ModelView):
+    datamodel = SQLAInterface(Menu4)
+    list_columns = ['id', 'title']
+
+class SocialmediaView(ModelView):
+    datamodel = SQLAInterface(Socialmedia)
+    list_columns = ['id']
+    
+class Menu5View(ModelView):
+    datamodel = SQLAInterface(Menu5)
+    list_columns = ['id', 'title']
+
+class Menu6View(ModelView):
+    datamodel = SQLAInterface(Menu6)
+    list_columns = ['id', 'title']
+    
 db.create_all()
 
 """ Page View """
@@ -90,4 +138,15 @@ appbuilder.add_view(MenuItemView, "MenuItem", icon="fa-folder-open-o", category=
 appbuilder.add_view(MenuCategoryView, "MenuCategory", icon="fa-folder-open-o", category="Admin")
 appbuilder.add_view(NewsView, "News", icon="fa-folder-open-o", category="Admin")
 appbuilder.add_view(NewsCategoryView, "NewsCategory", icon="fa-folder-open-o", category="Admin")
-
+appbuilder.add_view(CinemaView, "Cinema", icon="fa-folder-open-o", category="Admin")
+appbuilder.add_view(MovieView, "Movie", icon="fa-folder-open-o", category="Admin")
+appbuilder.add_view(MovietypeView, "Movietype", icon="fa-folder-open-o", category="Admin")
+appbuilder.add_view(LanguageView, "Language", icon="fa-folder-open-o", category="Admin")
+appbuilder.add_view(LoginuserView, "Loginuser", icon="fa-folder-open-o", category="Admin")
+appbuilder.add_view(Menu1View, "Menu1", icon="fa-folder-open-o", category="Admin")
+appbuilder.add_view(Menu2View, "Menu2", icon="fa-folder-open-o", category="Admin")
+appbuilder.add_view(Menu3View, "Menu3", icon="fa-folder-open-o", category="Admin")
+appbuilder.add_view(Menu4View, "Menu4", icon="fa-folder-open-o", category="Admin")
+appbuilder.add_view(SocialmediaView, "Socialmedia", icon="fa-folder-open-o", category="Admin")
+appbuilder.add_view(Menu5View, "Menu5", icon="fa-folder-open-o", category="Admin")
+appbuilder.add_view(Menu6View, "Menu6", icon="fa-folder-open-o", category="Admin")	
