@@ -11,3 +11,9 @@ li.tight {
 .navbar-brand a{
     color: #FFFFFF;
 }
+
+.head_Logo{
+    width: 300;
+    height: 70;
+    padding-top: 10;
+}
