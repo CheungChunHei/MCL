@@ -1,0 +1,24 @@
+{% extends "index_base.html" %}
+
+{% block head_css %}
+        {{ super() }}
+        <link href="{{url_for('static',filename='css/custom.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div>
+    <img src="{{url_for('static',filename='img/slide_film4.png')}}"></img>
+</div>
+<br>
+<a font size="4">美國大都會歌劇院高清系列：香港十二年回顧展</font></a>
+<br>
+<a href=https://www.mclcinema.com/Festival.aspx?id=1035&visLang=1><button class="btn btn-warning" style="color:#ffffff">詳細資料</href></button></a>
+
+<div>
+    <img src="{{url_for('static',filename='img/slide_film1.jpg')}}"></img>
+</div>
+<br>
+<a <font size="4">百年費里尼</font></a>
+<br>
+<a href=https://www.mclcinema.com/Festival.aspx?id=1042&visLang=1><button class="btn btn-warning" style="color:#ffffff">詳細資料</href></button>
+{% endblock %}

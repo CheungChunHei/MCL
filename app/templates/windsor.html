@@ -1,0 +1,36 @@
+{% extends "index_base.html" %}
+
+{% block content %}
+<div>
+    <img src="{{url_for('static',filename='img/subtitle_cinema_GrandWindsor.jpg')}}"></img>
+</div>
+<div class="container">
+    <p><font size="5" font color="#005AB5">皇室戲院</font></p>
+    <br>
+    <p><b><font size="4">地址</b></p>
+    <p>香港銅鑼灣告士打道311 號皇室堡4樓</p>
+    <p><b>電話</b></p>
+    <p>2129 0148</p>
+    </font></p>
+    <br>
+    <p>溫馨提示</p>
+    <p>請注意﹕觀眾請自攜3D眼鏡觀看3D電影。</p>
+    <p>觀眾亦可於戲院票房/ 小賣部購買全新3D眼鏡，每副只售港幣$10。</p>
+    <br>
+    <p><font size="5" font color="#005AB5"><b>現正發售的電影</b></font></p>
+</div>
+<div class="container list-inline">
+    <ul class="list-inline">
+        <li style="padding-left:20px"><img src="{{url_for('static',filename='img/film_stand_by_me_doraemon_2.jpg')}}" class="img-responsive" width="120" height="50" style="border-style:solid;border-width:1px"></img>
+        <font size="4">多啦A夢 2</font></li>
+        <li style="padding-left:20px"><img src="{{url_for('static',filename='img/film_godzilla_vs_kong.jpg')}}" class="img-responsive" width="120" height="50" style="border-style:solid;border-width:1px"></img>
+        <font size="4">哥斯拉大戰金剛</font></li>
+        <li style="padding-left:20px"><img src="{{url_for('static',filename='img/V-11828.jpg')}}" class="img-responsive" width="120" height="50" style="border-style:solid;border-width:1px"></img>
+        <font size="4">一秒拳王</font></li>
+        <li style="padding-left:20px"><img src="{{url_for('static',filename='img/V-11715.jpg')}}" class="img-responsive" width="120" height="50" style="border-style:solid;border-width:1px"></img>
+        <font size="4">鬼滅之刃</font></li>
+        <li style="padding-left:20px"><img src="{{url_for('static',filename='img/V-11960.png')}}" class="img-responsive" width="120" height="50" style="border-style:solid;border-width:1px"></img>
+        <font size="4">你好，李煥英</font></li>
+    </ul>
+</div>
+{% endblock %}

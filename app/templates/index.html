@@ -16,33 +16,34 @@
     <div class="col-md-2"></div>
 </div>
 
-<div class="col-md-12 text-right" style="background-color:#ffa800;height:40px;padding-right:320px">
+
+<div class="col-md-12 text-right" style="background-color:#ffa800;height:40px;padding-right:350px">
     <ul class="list-inline">
-        <li><a href=""><img src="static/img/header-icon-phone.png"></img></a></li>
-        <li><a href=""><img src="static/img/header-icon-ins.png"></img></a></li>
-        <li><a href=""><img src="static/img/header-icon-fb.png"></img></a></li>
-        <li><a href=""><img src="static/img/header-icon-ios.png"></img></a></li>
-        <li><a href=""><img src="static/img/header-icon-android.png"></img></a></li>
-        <li><a href=""><img src="static/img/header-icon-huawei.png"></img></a></li>
-        <li><h4><a href="" style="color:white">{{_("ABOUT US")}}</a></h4></li>
+        <li style="padding-left:0px"><a href="/menu99view/contactus/"><img src="static/img/header-icon-phone.png"></img></a></li>
+        <li style="padding-left:0px"><a href="https://www.instagram.com/mcl_cinemas/" target="_blank"><img src="static/img/header-icon-ins.png"></img></a></li>
+        <li style="padding-left:0px"><a href="https://www.facebook.com/MCLCinemas" ><img src="static/img/header-icon-fb.png"></img></a></li>
+        <a style="color:#ffffff;padding-left:0px"><font size="5">|</font></a>
+        <li style="padding-left:0px"><a href="https://apps.apple.com/hk/app/mcl-cinemas-ticketing/id807365065"><img src="static/img/header-icon-ios.png"></img></a></li>
+        <li style="padding-left:0px"><a href="https://play.google.com/store/apps/details?id=com.mtel.mclcinema"><img src="static/img/header-icon-android.png"></img></a></li>
+        <li style="padding-left:0px"><a href="https://appgallery.huawei.com/#/app/C102816027"><img src="static/img/header-icon-huawei.png"></img></a></li>
+        <a style="color:#ffffff;padding-left:0px"><font size="5">|</font></a>
+        <li style="padding-left:0px"><h4><a href="" style="color:white">{{_("ABOUT US")}}</a></h4></li>
     </ul>
 </div>
 
+
 <div class="col-md-12" style="background-color:#f36501;height:40px">
     <div class="col-md-2" ></div>
-    <div class="col-md-8" style="background-color:#ff7e00;height:40px">
-        <h5>
-            <ul class="list-inline" style="padding-top:3px">
-                <li><a href="" style="color:white">{{_("TICKETING")}}</a></li>
-                <li><a href="" style="color:white">{{_("COMING SOON")}}</a></li>
-                <li><a href="" style="color:white">{{_("FESTIVALS & PROGRAMS")}}</a></li>
-                <li><a href="" style="color:white">{{_("PROMOTIONS & NEWS")}}</a></li>
-                <li><a href="" style="color:white">{{_("EVENTS")}}</a></li>
-                <li><a href="" style="color:white">{{_("SCREEN AD")}}</a></li>
-            </ul>
-        </h5>
-    </div>
-    <div class="col-md-2"></div>   
+    <div class="col-md-8" style="background-color:#ff7e00;height:40px;padding-top:5px">
+        <ul class="list-inline" style="padding-top:3px">
+                <li><a href="/menuview/ticketing/" style="color:white">{{_("TICKETING")}}</a></li>
+                <li><a href="/menuview/coomingsoon/" style="color:white">{{_("COMING SOON")}}</a></li>
+                <li><a href="/menuview/festandpro/" style="color:white">{{_("FESTIVALS & PROGRAMS")}}</a></li>
+                <li><a href="/menuview/proandnews/" style="color:white">{{_("PROMOTIONS & NEWS")}}</a></li>
+                <li><a href="/menuview/events/" style="color:white">{{_("EVENTS")}}</a></li>
+                <li><a href="/menuview/screen/" style="color:white">{{_("SCREEN AD")}}</a></li>
+        </ul></div>
+    <div class="col-md-2"></div>
 </div>
 
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" >
@@ -59,7 +60,7 @@
             <div class="jumbotron" style="background: url('static/img/slide_film1.jpg');background-size: 100% 100%;background-repeat: no-repeat;height:400px">
             <div class="container">
                 <h1 style="padding-top:200px;color:white">FELLINI 100</h1>
-                <p class="text-right"><a class="btn btn-default btn-lg" style="background-color:#ff7e00;color:white" href="" role="button">{{_("TICKETING")}} &raquo;</a></p>
+                <p class="text-right"><a class="btn btn-default btn-lg" style="background-color:#ff7e00;color:white" href="{{url_for('menuView.ticketing')}}" role="button">{{_("TICKETING")}} &raquo;</a></p>
             </div>
            </div>
         </div>
@@ -68,7 +69,7 @@
             <div class="jumbotron" style="background: url('static/img/slide_film2.jpg');background-size: 100% 100%;background-repeat: no-repeat;height:400px">
             <div class="container">
                 <h1 style="padding-top:250px;color:white"></h1>
-                <p class="text-right"><a class="btn btn-default btn-lg" style="background-color:#ff7e00;color:white" href="" role="button">{{_("TICKETING")}} &raquo;</a></p>
+                <p class="text-right"><a class="btn btn-default btn-lg" style="background-color:#ff7e00;color:white" href="{{url_for('menuView.ticketing')}}" role="button">{{_("TICKETING")}} &raquo;</a></p>
             </div>
             </div>
         </div>
@@ -84,7 +85,7 @@
             <div class="jumbotron" style="background: url('static/img/slide_film4.png');background-size: 100% 100%;background-repeat: no-repeat;height:400px">
             <div class="container">
                 <h1 style="padding-top:250px;color:white"></h1>
-                <p class="text-right"><a class="btn btn-default btn-lg" style="background-color:#ff7e00;color:white" href="" role="button">{{_("TICKETING")}} &raquo;</a></p>
+                <p class="text-right"><a class="btn btn-default btn-lg" style="background-color:#ff7e00;color:white" href="{{url_for('menuView.ticketing')}}" role="button">{{_("TICKETING")}} &raquo;</a></p>
             </div>
             </div>
         </div>
@@ -93,15 +94,17 @@
             <div class="jumbotron" style="background: url('static/img/slide_film5.jpg');background-size: 100% 100%;background-repeat: no-repeat;height:400px">
             <div class="container">
                 <h1 style="padding-top:250px;color:white"></h1>
-                <p class="text-right"><a class="btn btn-default btn-lg" style="background-color:#ff7e00;color:white" href="" role="button">{{_("DETAILS")}} &raquo;</a></p>
+                <p class="text-right"><a class="btn btn-default btn-lg" style="background-color:#ff7e00;color:white" href="https://www.hangseng.com/zh-hk/personal/cards/products/mpower-card/movie/" role="button">{{_("DETAILS")}} &raquo;</a></p>
             </div>
             </div>
         </div>
+    </div>
 </div>
+
 <center>
     <div class="col-md-12" style="">
         <ul class="list-inline " style="dis" role="button">
-            <li><a href=""><img src="static/img/TIC.png" width="120" height="50" style="border-style:solid;border-width:1px"></img></a></li>
+            <li><a href="/menuview/ticketing/"><img src="static/img/TIC.png" width="120" height="50" style="border-style:solid;border-width:1px"></img></a></li>
             <li style="padding-left:0px"><a href=""><img src="static/img/F&P.png" width="120" height="50" style="border-style:solid;border-width:1px"></img></a></li>
             <li style="padding-left:0px"><a href=""><img src="static/img/index.jump.imax.png" width="120" height="50" style="border-style:solid;border-width:1px"></img></a></li>
             <li style="padding-left:0px"><a href=""><img src="static/img/index.jump.onxy.png" width="120" height="50" style="border-style:solid;border-width:1px"></img></a></li>
@@ -112,19 +115,11 @@
         </ul>
     </div>
 </center>
-<center>
-    <div class="col-md-12" style="">
-        <ul class="list-inline " style="dis" role="button">
-            <li><a href=""><img src="static/img/TIC.png" width="120" height="50" style="border-style:solid;border-width:1px"></img></a></li>
-            <li style="padding-left:0px"><a href=""><img src="static/img/F&P.png" width="120" height="50" style="border-style:solid;border-width:1px"></img></a></li>
-            <li style="padding-left:0px"><a href=""><img src="static/img/index.jump.imax.png" width="120" height="50" style="border-style:solid;border-width:1px"></img></a></li>
-            <li style="padding-left:0px"><a href=""><img src="static/img/index.jump.onxy.png" width="120" height="50" style="border-style:solid;border-width:1px"></img></a></li>
-            <li style="padding-left:0px"><a href=""><img src="static/img/index.jump.reald.png" width="120" height="50" style="border-style:solid;border-width:1px"></img></a></li>
-            <li style="padding-left:0px"><a href=""><img src="static/img/index.jump.mx4d.png" width="120" height="50" style="border-style:solid;border-width:1px"></img></a></li>
-            <li style="padding-left:0px"><a href=""><img src="static/img/index.jump.fx.png" width="120" height="50" style="border-style:solid;border-width:1px"></img></a></li>
-            <li style="padding-left:0px"><a href=""><img src="static/img/index-jump-luxe.png" width="120" height="50" style="border-style:solid;border-width:1px"></img></a></li>
-        </ul>
-    </div>
-</center>
+
+
+
+
+
+
 
 {% endblock %}

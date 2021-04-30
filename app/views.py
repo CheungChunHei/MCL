@@ -62,21 +62,111 @@ class NewsView(ModelView):
 class NewsCategoryView(ModelView):
     datamodel = SQLAInterface(NewsCategory)
     list_columns = ['id', 'name']
-
-class NewsPageView(BaseView):
-    default_view = 'local_news'
-
-    @expose('/local_news/')
-    def local_news(self):
-        param1 = 'Local News'
+        
+class menuView(BaseView):
+    default_view = 'ticketing'
+    
+    @expose('/ticketing/')
+    def ticketing(self):
+        param1 = 'Ticketing'
         self.update_redirect()
-        return self.render_template('news.html', param1 = param1)
-
-    @expose('/global_news/')
-    def global_news(self):
-        param1 = 'Global News'
+        return self.render_template('ticketing.html', param1=param1)
+        
+    @expose('/coomingsoon/')
+    def comingsoon(self):
+        param1 = 'Comming soon'
         self.update_redirect()
-        return self.render_template('news.html', param1=param1)
+        return self.render_template('coomingsoon.html', param1=param1)
+        
+    @expose('/festandpro/')
+    def festandpro(self):
+        param1 = 'Festival & Programes'
+        self.update_redirect()
+        return self.render_template('festandpro.html', param1=param1)
+        
+    @expose('/proandnews/')
+    def proandnews(self):
+        param1 = 'Promotion & News'
+        self.update_redirect()
+        return self.render_template('proandnews.html', param1=param1)
+        
+    @expose('/events/')
+    def events(self):
+        param1 = 'Events'
+        self.update_redirect()
+        return self.render_template('events.html', param1=param1)
+    
+    @expose('/screen/')
+    def screen(self):
+        param1 = 'Screen'
+        self.update_redirect()
+        return self.render_template('screen.html', param1=param1)
+
+class cinemaareaView(BaseView):
+    default_view = 'k11'
+    
+    @expose('/k11/')
+    def k11(self):
+        param1 = 'K11 Art House'
+        self.update_redirect()
+        return self.render_template('k11.html', param1=param1)
+        
+    @expose('/beafestival/')
+    def beafestival(self):
+        param1 = 'Bea Festival Suite'
+        self.update_redirect()
+        return self.render_template('beafestival.html', param1=param1)
+        
+    @expose('/windsor/')
+    def windsor(self):
+        param1 = 'Winsor'
+        self.update_redirect()
+        return self.render_template('windsor.html', param1=param1)
+        
+class menu99View(BaseView):
+    default_view = 'aboutus'
+    
+    @expose('/aboutus/')
+    def aboutus(self):
+        param1 = 'About us'
+        self.update_redirect()
+        return self.render_template('aboutus.html', param1=param1)
+        
+    @expose('/contactus/')
+    def contactus(self):
+        param1 = 'Contact us'
+        self.update_redirect()
+        return self.render_template('contactus.html', param1=param1)
+
+    @expose('/career/')
+    def career(self):
+        param1 = 'Career'
+        self.update_redirect()
+        return self.render_template('career.html', param1=param1)
+
+    @expose('/faq/')
+    def faq(self):
+        param1 = 'FAQ'
+        self.update_redirect()
+        return self.render_template('faq.html', param1=param1)
+
+    @expose('/personalinf/')
+    def personalinf(self):
+        param1 = 'Personal Information Colletion Statement'
+        self.update_redirect()
+        return self.render_template('personalinf.html', param1=param1)
+        
+    @expose('/privacypolicy/')
+    def privacypolicy(self):
+        param1 = 'Privacy Policy'
+        self.update_redirect()
+        return self.render_template('privacypolicy.html', param1=param1)
+        
+    @expose('/termofuse/')
+    def termofuse(self):
+        param1 = 'Term Of Use'
+        self.update_redirect()
+        return self.render_template('termofuse.html', param1=param1)
 
 class CinemaView(ModelView):
     datamodel = SQLAInterface(Cinema)
@@ -134,8 +224,22 @@ class CinemamovieView(ModelView):
 db.create_all()
 
 """ Page View """
-appbuilder.add_view(NewsPageView, 'Local News', category="News")
-appbuilder.add_link("Global News", href="/newspageview/global_news/", category="News")
+appbuilder.add_view(menuView, 'Ticketing', category="Menu")
+appbuilder.add_link("Comming soon", href="/menuview/coomingsoon/", category="Menu")
+appbuilder.add_link("Festival & Programes", href="/menuview/festandpro/", category="Menu")
+appbuilder.add_link("Promotions & News", href="/menuview/proandnews/", category="Menu")
+appbuilder.add_link("Events", href="/menuview/events/", category="Menu")
+appbuilder.add_link("Screen AD", href="/menuview/screen/", category="Menu")
+appbuilder.add_view(cinemaareaView, 'K11 Art House', category="Cinemaarea")
+appbuilder.add_link("Bea Festival Suite", href="/cinemaareaview/beafestival/", category="Cinemaarea")
+appbuilder.add_link("Windsor", href="/cinemaareaview/windsor/", category="Cinemaarea")
+appbuilder.add_view(menu99View, 'About Us', category="More")
+appbuilder.add_link("Contact us", href="/menu99view/contactus/", category="More")
+appbuilder.add_link("Career", href="/menu99view/career/", category="More")
+appbuilder.add_link("FAQ", href="/menu99view/faq/", category="More")
+appbuilder.add_link("Personal Information Collection Statement", href="/menu99view/personalinf/", category="More")
+appbuilder.add_link("Privacy Policy Statement", href="/menu99view/privacypolicy/", category="More")
+appbuilder.add_link("Term Of Use", href="/menu99view/termofuse/", category="More")
 
 """ Custom Views """
 appbuilder.add_view(MenuItemView, "MenuItem", icon="fa-folder-open-o", category="Admin")
